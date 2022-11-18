@@ -50,7 +50,7 @@ const Home = ({ signOut, user }) => {
       <Button onClick={signOut} style={styles.button}>
         Sign out
       </Button>
-      <h2>Amplify Todos</h2>
+      <h2> {user.username} Todo's</h2>
       <input
         onChange={(event) => setInput("name", event.target.value)}
         style={styles.input}
