@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Amplify, API, graphqlOperation } from "aws-amplify";
-import { createTodo } from "../../graphql/mutations";
+import { createTodo, updateTodo, deleteTodo } from '../../graphql/mutations'
 import { listTodos } from "../../graphql/queries";
 import { withAuthenticator, Button, Heading } from "@aws-amplify/ui-react";
 // import "@aws-amplify/ui-react/styles.css";
