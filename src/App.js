@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+// this is the center of the application, root component, or wrapper component
+import React from "react";
+import { Amplify, API, graphqlOperation } from "aws-amplify";
+import Home from "./components/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import "@aws-amplify/ui-react/styles.css";
+
+import awsExports from "./aws-exports";
+Amplify.configure(awsExports);
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
